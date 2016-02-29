@@ -12,9 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
-Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
+Route::group(['middleware' => 'guest'], function() {
+  Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
+  Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
+});
+
+Route::group(['middleware' => 'auth', 'prefix' => 'api/v1'], function() {
+  Route::get('/token', function() {
+    return response()->json($user->token);
+  });
+});
+
 Route::get('/logout', 'Auth\AuthController@getLogout');
