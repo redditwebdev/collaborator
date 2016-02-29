@@ -20,10 +20,8 @@ Route::group(['middleware' => 'guest'], function() {
   Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
 });
 
-Route::group(['middleware' => 'auth', 'prefix' => 'api/v1'], function() {
-  Route::get('/token', function() {
-    return response()->json($user->token);
-  });
+Route::group(['middleware' => 'auth', 'prefix' => 'api/v1/me'], function() {
+  Route::get('/repos', 'MeController@repos');
 });
 
 Route::get('/logout', 'Auth\AuthController@getLogout');
