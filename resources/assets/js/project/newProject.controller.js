@@ -43,12 +43,10 @@
     }
 
     vm.submit = function() {
-      vm.model.description = vm.description;
-
-      $http.post('/api/v1/projects/new')
-        .then(function(res) {
+      $http.post('/api/v1/projects/new', vm.model)
+        .then(function(response) {
           if (response.data.status == 'success') {
-            window.location.href = '/project/' + response.data.slug;
+            window.location.href = '/project/' + vm.model.repo_owner + '/' + vm.model.repo_name;
           } else {
             vm.errors = response.data.errors;
           }
