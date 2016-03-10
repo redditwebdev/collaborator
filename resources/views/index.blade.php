@@ -12,6 +12,7 @@
     <div class="container">
       <h1>Most recent projects</h1>
 
+
       <div class="row">
         @foreach($recents as $project)
           <div class="col-xs-12 col-sm-4">
