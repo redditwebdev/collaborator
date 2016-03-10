@@ -3,11 +3,35 @@
 @section('content')
   <div class="wrapper">
     <div class="container">
-      <h1><a href="https://github.com/{{$project->repo_owner}}/{{$project->repo_name}}">{{$project->name}}</a></h1>
-      <h3>by <a href="https://github.com/{{$project->user->github_username}}">{{$project->user->name}}</a></h3>
-      <p>
-        {{$project->description}}
-      </p>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="project-header">
+            <h1><a href="https://github.com/{{$project->repo_owner}}/{{$project->repo_name}}" target="_blank">{{$project->name}}</a></h1>
+            <p>by <a href="https://github.com/{{$project->user->github_username}}" target="_blank">{{$project->user->name}}</a></p>
+          </div>
+          <div class="project-description">
+            <p>
+              <strong>Project Description:</strong>
+            </p>
+            {{$project->description}}
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-sm-offset-1">
+          <h2 class="text-center">Comments</h2>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Username</h3>
+            </div>
+            <div class="panel-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            </div>
+            <div class="panel-footer clearfix">
+              <span class="pull-right" title="2016-03-10 17:14:31">2 days ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 @endsection
