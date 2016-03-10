@@ -7,7 +7,8 @@ var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 
 var stylesheets = [
-  'node_modules/bootstrap/dist/css/bootstrap.min.css'
+  'node_modules/bootstrap/dist/css/bootstrap.min.css',
+  'resources/assets/scss/app.scss'
 ];
 
 var scripts = [

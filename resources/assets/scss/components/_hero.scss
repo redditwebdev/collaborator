@@ -1,0 +1,34 @@
+.hero {
+  width: 100%;
+  height: 100%;
+  display: table;
+
+  .hero-content {
+    display: table-cell;
+    vertical-align: middle;
+
+    input[type="text"] {
+      width: 90%;
+      margin-top: 15px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Small (phones) 544px */
+    @media (min-width: 544px) {
+      input[type="text"] {
+        width: 40%;
+      }
+    }
+  }
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.hero-half {
+  height: 50%;
+}
+
+.hero-1-3 {
+  height: calc(100% / 3);
+}
