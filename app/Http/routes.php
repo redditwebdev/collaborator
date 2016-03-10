@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'PagesController@getIndex');
 
 Route::group(['middleware' => 'guest'], function() {
   Route::get('auth/github', 'Auth\AuthController@redirectToProvider');

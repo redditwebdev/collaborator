@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="form-group">
+          <div class="form-group col-xs-12">
             <label for="description">Briefly describe the project</label>
             <textarea class="form-control" ng-model="vm.model.description"></textarea>
           </div>
