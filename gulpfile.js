@@ -8,10 +8,14 @@ var uglify = require('gulp-uglify');
 
 var stylesheets = [
   'node_modules/bootstrap/dist/css/bootstrap.min.css',
+  'node_modules/select2/dist/css/select2.min.css',
   'resources/assets/scss/app.scss'
 ];
 
 var scripts = [
+  'node_modules/jquery/dist/jquery.min.js',
+  'node_modules/select2/dist/js/select2.min.js',
+  'node_modules/bootstrap/dist/js/bootstrap.min.js',
   'node_modules/angular/angular.min.js',
   'resources/assets/js/**/*.module.js',
   'resources/assets/js/**/*.js'
