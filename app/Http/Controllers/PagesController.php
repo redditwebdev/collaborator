@@ -12,7 +12,7 @@ use App\Project;
 class PagesController extends Controller
 {
     public function getIndex() {
-      $recents = Project::all()->reverse()->take(4);
+      $recents = Project::latest()->take(9)->get();
       return view('index', compact('recents'));
     }
 }

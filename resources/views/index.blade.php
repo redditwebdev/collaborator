@@ -12,28 +12,22 @@
     <div class="container">
       <h1>Most recent projects</h1>
 
-
+      @foreach (array_chunk($recents->all(), 3) as $row)
       <div class="row">
-        @foreach($recents as $project)
+        @foreach($row as $project)
           <div class="col-xs-12 col-sm-4">
-            <div class="panel panel-default ">
-              <div class="panel-heading">
-                <h3 class="panel-title"><a href="/project/{{$project->repo_owner}}/{{$project->repo_name}}">{{$project->name}}</a></h3>
-              </div>
-              <div class="panel-body">
-                {{substr($project->description, 0, 140)}}...
-              </div>
-              <div class="panel-footer">
-                <a href="https://github.com/{{$project->user->github_username}}">{{$project->user->github_username}}</a>
-
-                <span class="pull-right">
-                  {{$project->created_at->diffForHumans()}}
-                </span>
-              </div>
-            </div>
+            <h3><a href="/project/{{$project->repo_owner}}/{{$project->repo_name}}">{{$project->name}}</a></h3>
+            <p>
+              {{substr($project->description, 0, 60)}}...
+            </p>
+            <p>
+              <a href="https://github.com/{{$project->user->github_username}}">{{$project->user->github_username}}</a>
+              - {{$project->created_at->diffForHumans()}}
+            </p>
           </div>
         @endforeach
       </div>
+      @endforeach
 
     </div>
   </div>
