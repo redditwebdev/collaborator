@@ -32,6 +32,14 @@
           </div>
         </div>
         <div class="row">
+          <div class="form-group col-xs-12">
+            <label for="description">Add up to 3 tags (eg. python, angular, gamedev)</label>
+            <select id="s2_tags" class="form-control" ng-model="vm.model.tags" multiple="multiple">
+
+            </select>
+          </div>
+        </div>
+        <div class="row">
           <div class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>

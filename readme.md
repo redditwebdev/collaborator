@@ -14,7 +14,9 @@ This website is made using Angular.js v1 and Laravel 5, using SCSS for css
 6. `php artisan key:generate`
 7. Ask for the github api key (must be with organization) or supply your own
 8. Add the client id + secret + callback to the .env
-9. Make changes and submit a PR
+9. Add your DB credentials to the .env file
+10. run `php artisan migrate`
+11. Make your changes and submit a detailed PR
 
 ## Javascript
 

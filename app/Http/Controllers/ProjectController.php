@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use Auth;
 use App\Project;
+use App\Tag;
 use GrahamCampbell\GitHub\Facades\GitHub;
 
 class ProjectController extends Controller
@@ -54,6 +55,26 @@ class ProjectController extends Controller
         'repo_owner' => $request->repo_owner,
         'user_id' => Auth::user()->id
       ]);
+
+      $tags = $request->tags;
+
+      $tag_ids = [];
+
+      // Loop through the tags passed
+      // If the tag hasn't been created yet, make it
+      // Then push the id of the tag into the tag_ids array for syncing
+      foreach ($tags as $tag) {
+        if ($temp = Tag::whereName($tag)->exists()) {
+          $tag_ids[] = $temp->id;
+        } else {
+          $temp = Tag::create([
+            'name' => $tag
+          ]);
+          $tag_ids[] = $temp->id;
+        }
+      }
+
+      $project->tags()->sync($tag_ids);
 
       return response()->json([
         'status' => 'success',

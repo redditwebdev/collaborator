@@ -21,7 +21,7 @@
                 <h3 class="panel-title"><a href="/project/{{$project->repo_owner}}/{{$project->repo_name}}">{{$project->name}}</a></h3>
               </div>
               <div class="panel-body">
-                {{$project->description}}
+                {{substr($project->description, 0, 140)}}...
               </div>
               <div class="panel-footer">
                 <a href="https://github.com/{{$project->user->github_username}}">{{$project->user->github_username}}</a>

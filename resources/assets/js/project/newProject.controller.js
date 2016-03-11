@@ -35,11 +35,9 @@
         }
       }
 
-      vm.model = {
-        repo_name: temp.name,
-        repo_owner: temp.owner.login,
-        name: vm.model.name ? vm.model.name : temp.name
-      }
+      vm.model.repo_name = temp.name;
+      vm.model.repo_owner = temp.owner.login;
+      vm.model.name = vm.model.name ? vm.model.name : temp.name;
     }
 
     vm.submit = function() {
@@ -53,5 +51,11 @@
         });
     }
   }
+
+  jQuery('#s2_tags').select2({
+    tags: true,
+    maximumSelectionLength: 3,
+    tokenSeparators: [',', ' ']
+  });
 
 })();
