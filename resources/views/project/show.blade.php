@@ -8,6 +8,12 @@
           <div class="project-header">
             <h1><a href="https://github.com/{{$project->repo_owner}}/{{$project->repo_name}}" target="_blank">{{$project->name}}</a></h1>
             <p>by <a href="https://github.com/{{$project->user->github_username}}" target="_blank">{{$project->user->name}}</a></p>
+            <p>
+              Tags:
+              @foreach ($project->tags as $tag)
+                {{$tag->name}}&nbsp;
+              @endforeach
+            </p>
           </div>
           <div class="project-description">
             <p>
