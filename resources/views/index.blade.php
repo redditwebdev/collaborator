@@ -4,7 +4,9 @@
   <div class="hero hero-1-3">
     <div class="hero-content text-center">
       <h1>Find collaborators for open source projects</h1>
-      <input type="text" placeholder="Search for a project, language, etc..." class="form-control">
+      <form action="/search" method="GET">
+        <input type="text" name="q" placeholder="Search for a project, language, etc..." class="form-control">
+      </form>
     </div>
   </div>
   <div class="wrapper">
