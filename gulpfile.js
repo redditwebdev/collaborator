@@ -50,4 +50,6 @@ gulp.task('watch', ['scss', 'js'], function () {
   gulp.watch('resources/assets/js/**/*.js', ['js']);
 });
 
+gulp.task('build', ['scss', 'js']);
+
 gulp.task('default', ['watch']);

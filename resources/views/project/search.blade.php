@@ -3,9 +3,17 @@
 @section('content')
   <div class="wrapper">
     <div class="container">
-      <h1>Tagged {{$tag->name}}</h1>
-      @foreach (array_chunk($tag->projects->reverse()->all(), 3) as $row)
-      <div class="row">
+      <h1>Search Results ({{$projects->count()}})</h1>
+      <form action="/search" method="GET">
+        <div class="input-group">
+          <input type="text" name="q" value="{{$search}}" placeholder="Search for a project, language, etc..." class="form-control">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </span>
+        </div>
+      </form>
+      @foreach (array_chunk($projects->all(), 3) as $row)
+      <div class="row" style="margin-top:25px;">
         @foreach($row as $project)
           <div class="col-xs-12 col-sm-4">
             <div class="project-card">

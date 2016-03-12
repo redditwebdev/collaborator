@@ -33,4 +33,5 @@ Route::group(['middleware' => 'auth', 'prefix' => 'api/v1/projects'], function()
 
 Route::get('/project/{owner}/{name}', 'ProjectController@getProject');
 Route::get('/tagged', 'ProjectController@getTagged');
+Route::get('/search', 'PagesController@getSearch');
 Route::get('/logout', 'Auth\AuthController@getLogout');

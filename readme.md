@@ -16,6 +16,7 @@ This website is made using Angular.js v1 and Laravel 5, using SCSS for css
 8. Add the client id + secret + callback to the .env
 9. Add your DB credentials to the .env file
 10. run `php artisan migrate`
+11. run `gulp build` to bundle all of the assets (bundled assets are not included in SC)
 11. Make your changes and submit a detailed PR
 
 ## Javascript
