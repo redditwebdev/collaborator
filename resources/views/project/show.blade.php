@@ -16,12 +16,14 @@
             </p>
             @endif
           </div>
+          @if ($project->description)
           <div class="project-description">
             <p>
               <strong>Project Description:</strong>
             </p>
             {{$project->description}}
           </div>
+          @endif
         </div>
         <div class="col-xs-12 col-sm-5 col-sm-offset-1">
           <h2 class="text-center">Comments</h2>
