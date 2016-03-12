@@ -87,4 +87,10 @@ class ProjectController extends Controller
 
       return response()->json($project);
     }
+
+    public function getTagged(Request $request) {
+      $tag = Tag::whereName(urldecode($request->q))->firstOrFail();
+
+      return view('project.tag', compact('tag'));
+    }
 }
