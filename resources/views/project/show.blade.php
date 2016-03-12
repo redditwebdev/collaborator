@@ -8,12 +8,13 @@
           <div class="project-header">
             <h1><a href="https://github.com/{{$project->repo_owner}}/{{$project->repo_name}}" target="_blank">{{$project->name}}</a></h1>
             <p>by <a href="https://github.com/{{$project->user->github_username}}" target="_blank">{{$project->user->name}}</a></p>
+            @if ($project->tags->count())
             <p>
-              Tags:
               @foreach ($project->tags as $tag)
-                <a href="/tagged?q={{urlencode($tag->name)}}">{{$tag->name}}</a>&nbsp;
+                <span class="tag"><a href="/tagged?q={{urlencode($tag->name)}}">{{$tag->name}}</a></span>
               @endforeach
             </p>
+            @endif
           </div>
           <div class="project-description">
             <p>

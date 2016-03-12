@@ -1,0 +1,16 @@
+.tag {
+  padding: 6px 12px;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: white;
+  background: #393e41;
+
+  a, a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
