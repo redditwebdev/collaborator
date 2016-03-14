@@ -13,12 +13,14 @@ var stylesheets = [
 ];
 
 var scripts = [
-  'node_modules/jquery/dist/jquery.min.js',
-  'node_modules/select2/dist/js/select2.min.js',
-  'node_modules/bootstrap/dist/js/bootstrap.min.js',
-  'node_modules/angular/angular.min.js',
-  'resources/assets/js/**/*.module.js',
-  'resources/assets/js/**/*.js'
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/select2/dist/js/select2.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    'node_modules/angular/angular.min.js',
+    'node_modules/angular-marked/node_modules/marked/marked.min.js',
+    'node_modules/angular-marked/dist/angular-marked.min.js',
+    'resources/assets/js/**/*.module.js',
+    'resources/assets/js/**/*.js'
 ];
 
 gulp.task('scss', function() {

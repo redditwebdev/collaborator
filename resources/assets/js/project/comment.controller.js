@@ -15,6 +15,8 @@
 
         vm.comments = [];
 
+        vm.newComment = "";
+
         vm.getComments = function() {
             console.log(vm.project);
             $http.get('/api/v1/project/' + vm.project.repo_owner + '/' + vm.project.repo_name + '/comments')

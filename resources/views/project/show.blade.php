@@ -27,14 +27,20 @@
         </div>
         <div class="col-xs-12 col-sm-5 col-sm-offset-1" ng-controller="CommentController as vm" ng-init="vm.project = {{ $project }}; vm.getComments()">
           <h2 class="text-center">Comments</h2>
-
+          <form ng-submit="vm.newComment()" class="clearfix">
+            <div class="form-group">
+              <textarea ng-model="vm.newComment" class="form-control"></textarea>
+            </div>
+            <div class="form-group clearfix">
+              <button type="submit" class="btn btn-primary pull-right">Post</button>
+            </div>
+          </form>
+          <pre marked="vm.newComment" ng-show="vm.newComment != ''"></pre>
           <div class="panel panel-default" ng-repeat="comment in vm.comments">
             <div class="panel-heading">
               <p class="panel-title"><strong>@{{ comment.user.github_username }}</strong> - <span title="@{{ comment.created_at }}">@{{ comment.created_at }}</span></p>
             </div>
-            <div class="panel-body">
-              @{{ comment.body }}
-            </div>
+            <div class="panel-body" marked="comment.body"></div>
           </div>
         </div>
       </div>
