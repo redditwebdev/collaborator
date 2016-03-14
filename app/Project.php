@@ -33,7 +33,7 @@ class Project extends Model
 
     /**
      * Comments relationship
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function comments() {

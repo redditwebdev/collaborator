@@ -26,8 +26,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'api/v1/me'], function() {
   Route::get('/repos', 'MeController@repos');
 });
 
-Route::group(['middleware' => 'auth', 'prefix' => 'api/v1/projects'], function() {
+Route::group(['middleware' => 'auth', 'prefix' => 'api/v1/project'], function() {
   Route::post('/new', 'ProjectController@create');
+  Route::get('/{owner}/{repo}/comments', 'CommentController@comments');
 });
 
 
