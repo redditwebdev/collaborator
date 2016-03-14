@@ -18,11 +18,17 @@ class PagesController extends Controller
     private $project;
 
     /**
+     * @var Tag
+     */
+    private $tag;
+
+    /**
      * PagesController constructor.
      * @param Project $project
      */
-    public function __construct(Project $project) {
+    public function __construct(Project $project, Tag $tag) {
       $this->project = $project;
+        $this->tag = $tag;
     }
 
     /**
