@@ -30,4 +30,13 @@ class Project extends Model
     public function tags() {
       return $this->belongsToMany('App\Tag');
     }
+
+    /**
+     * Comments relationship
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments() {
+        return $this->hasMany('App\Comment');
+    }
 }
