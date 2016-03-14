@@ -27,7 +27,12 @@
         </div>
         <div class="col-xs-12 col-sm-5 col-sm-offset-1" ng-controller="CommentController as vm" ng-init="vm.project = {{ $project }}; vm.getComments()">
           <h2 class="text-center">Comments</h2>
-          <form ng-submit="vm.newComment()" class="clearfix">
+          <div class="alert alert-danger" ng-show="vm.errors.length != 0">
+            <p ng-repeat="error in vm.errors">
+              @{{ error }}
+            </p>
+          </div>
+          <form ng-submit="vm.submitComment()" class="clearfix">
             <div class="form-group">
               <textarea ng-model="vm.newComment" class="form-control"></textarea>
             </div>
