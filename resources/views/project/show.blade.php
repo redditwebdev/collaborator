@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-  <div class="wrapper">
+  <div class="wrapper" ng-app="project">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-6">
@@ -25,16 +25,27 @@
           </div>
           @endif
         </div>
-        <div class="col-xs-12 col-sm-5 col-sm-offset-1">
+        <div class="col-xs-12 col-sm-5 col-sm-offset-1" ng-controller="CommentController as vm" ng-init="vm.project = {{ $project }}; vm.getComments()">
           <h2 class="text-center">Comments</h2>
-
-          <div class="panel panel-default">
+          <div class="alert alert-danger" ng-show="vm.errors.length != 0">
+            <p ng-repeat="error in vm.errors">
+              @{{ error }}
+            </p>
+          </div>
+          <form ng-submit="vm.submitComment()" class="clearfix">
+            <div class="form-group">
+              <textarea ng-model="vm.newComment" class="form-control"></textarea>
+            </div>
+            <div class="form-group clearfix">
+              <button type="submit" class="btn btn-primary pull-right">Post</button>
+            </div>
+          </form>
+          <pre marked="vm.newComment" ng-show="vm.newComment != ''"></pre>
+          <div class="panel panel-default" ng-repeat="comment in vm.comments">
             <div class="panel-heading">
-              <p class="panel-title"><strong>Username</strong> - <span title="2016-03-10 17:14:31">2 days ago</span></p>
+              <p class="panel-title"><strong>@{{ comment.user.github_username }}</strong> - <span title="@{{ comment.created_at }}">@{{ comment.created_at }}</span></p>
             </div>
-            <div class="panel-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-            </div>
+            <div class="panel-body" marked="comment.body"></div>
           </div>
         </div>
       </div>

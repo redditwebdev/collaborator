@@ -10,7 +10,7 @@ use GrahamCampbell\GitHub\GitHubManager;
  *
  * @package App\Http\Controllers
  * @author Jason Michels <michelsja@icloud.com>
- * @author Ozzie
+ * @author Ozzie Neher
  */
 class MeController extends Controller
 {

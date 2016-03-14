@@ -41,7 +41,7 @@
     }
 
     vm.submit = function() {
-      $http.post('/api/v1/projects/new', vm.model)
+      $http.post('/api/v1/project/new', vm.model)
         .then(function(response) {
           if (response.data.status == 'success') {
             window.location.href = '/project/' + vm.model.repo_owner + '/' + vm.model.repo_name;
