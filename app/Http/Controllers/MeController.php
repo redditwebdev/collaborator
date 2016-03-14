@@ -36,7 +36,7 @@ class MeController extends Controller
     }
 
     /**
-     * Get github repositories
+     * Get authenticated users github repositories
      *
      * @return \Illuminate\Http\JsonResponse
      */
